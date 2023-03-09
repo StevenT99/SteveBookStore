@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using SteveBookStore.Models;
 using SteveBookStore.Models.ViewModels;
-
+//Home controller, need to control everything from here
 namespace SteveBookStore.Controllers
 {
     public class HomeController : Controller

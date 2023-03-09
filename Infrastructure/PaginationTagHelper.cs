@@ -9,7 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+//This is used for the Tag helpers for pagination
 namespace SteveBookStore.Infrastructure
 {
     [HtmlTargetElement("div", Attributes ="page-blah")]

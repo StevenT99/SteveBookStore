@@ -1,4 +1,5 @@
 ﻿<!DOCTYPE html>
+<!--My other bootstrap addition is here below-->
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -35,7 +36,51 @@
             </div>
         </div>
     </div>
-    <script src="~/lib/js/jquery.min.js"></script>
-    <script src="~/lib/js/bootstrap.min.js"></script>
-</body>
+    <!-- Here I added a bootstrap styled clock This was my other extra bootstrap addition-->
+    <style>
+        .clock {
+            font-size: 4em;
+            font-weight: bold;
+            text-align: center;
+            margin: 2em auto;
+        }
+    </style>
+    
+    
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h1 class="card-title text-center">Busy Reader Time Keeper</h1>
+                            <div class="clock" id="clock"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+    <!--The is the script that updates the clock-->
+        <script>
+            function updateClock() {
+                var now = new Date();
+                var hour = now.getHours();
+                var minute = now.getMinutes();
+                var second = now.getSeconds();
+                var ampm = (hour < 12) ? "AM" : "PM";
+                hour = (hour > 12) ? hour - 12 : hour;
+                hour = (hour == 0) ? 12 : hour;
+                hour = (hour < 10) ? "0" + hour : hour;
+                minute = (minute < 10) ? "0" + minute : minute;
+                second = (second < 10) ? "0" + second : second;
+                var timeString = hour + ":" + minute + ":" + second + " " + ampm;
+                document.getElementById("clock").innerHTML = timeString;
+            }
+            setInterval(updateClock, 1000);
+        </script>
+        <script src="~/lib/js/jquery.min.js"></script>
+        <script src="~/lib/js/bootstrap.min.js"></script>
+
+    </body>
 </html>
