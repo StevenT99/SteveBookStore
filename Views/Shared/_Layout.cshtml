@@ -25,8 +25,15 @@
             </ul>
         </div>
     </nav>
-    <div class="container mt-4">
-        @RenderBody()
+    <div class="row m-1 p-1">
+        <div id="Category" class="col-3">
+            <vc:types></vc:types>
+        </div>
+        <div class="col-9">
+            <div class="container mt-4">
+                @RenderBody()
+            </div>
+        </div>
     </div>
     <script src="~/lib/js/jquery.min.js"></script>
     <script src="~/lib/js/bootstrap.min.js"></script>
