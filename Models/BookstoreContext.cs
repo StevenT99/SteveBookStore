@@ -20,6 +20,8 @@ namespace SteveBookStore.Models
         }
 
         public DbSet<Books> Books { get; set; }
+        public DbSet<Checkout> Checkouts { get; set; }
+
 
 
     }

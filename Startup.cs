@@ -35,6 +35,7 @@ namespace SteveBookStore
            });
 
             services.AddScoped<IBookStoreRepository, EFBookStoreRepository>();
+            services.AddScoped<ICheckoutRepository, EFCheckoutRepository>();
 
             services.AddRazorPages();
             services.AddDistributedMemoryCache();

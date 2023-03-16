@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 //This is my basket view model. It has the functions for my basket
@@ -49,6 +50,7 @@ namespace SteveBookStore.Models
     
     public class BasketLineItem 
     { 
+        [Key]
         public int LineID { get; set; }
         public Books Books { get; set; }
         public int Quantity { get; set; }

@@ -5,27 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>@ViewBag.Title</title>
     <link href="~/lib/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css" integrity="sha512-ZYg+hQvLlM0W9C3P6vTpes5LmJ66G2EsroxDNzwD6qiulckldb29eD9I672HL2X+LH5nRhY1sQqZLJGB+aUUPg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">SteveBookStore</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
-            </ul>
+    <div class="bg-dark text-white p-2">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col navbar-brand">SPORTS STORE</div>
+                <div class="col-6 text-right">
+                    <vc:cart-summary />
+                </div>
+            </div>
         </div>
-    </nav>
+    </div>
     <div class="row m-1 p-1">
         <div id="Category" class="col-3">
             <vc:types></vc:types>
@@ -45,42 +37,42 @@
             margin: 2em auto;
         }
     </style>
-    
-    
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-body">
-                            <h1 class="card-title text-center">Busy Reader Time Keeper</h1>
-                            <div class="clock" id="clock"></div>
-                        </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="card-title text-center">Busy Reader Time Keeper</h1>
+                        <div class="clock" id="clock"></div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        
+
     <!--The is the script that updates the clock-->
-        <script>
-            function updateClock() {
-                var now = new Date();
-                var hour = now.getHours();
-                var minute = now.getMinutes();
-                var second = now.getSeconds();
-                var ampm = (hour < 12) ? "AM" : "PM";
-                hour = (hour > 12) ? hour - 12 : hour;
-                hour = (hour == 0) ? 12 : hour;
-                hour = (hour < 10) ? "0" + hour : hour;
-                minute = (minute < 10) ? "0" + minute : minute;
-                second = (second < 10) ? "0" + second : second;
-                var timeString = hour + ":" + minute + ":" + second + " " + ampm;
-                document.getElementById("clock").innerHTML = timeString;
-            }
-            setInterval(updateClock, 1000);
-        </script>
-        <script src="~/lib/js/jquery.min.js"></script>
-        <script src="~/lib/js/bootstrap.min.js"></script>
+    <script>
+        function updateClock() {
+            var now = new Date();
+            var hour = now.getHours();
+            var minute = now.getMinutes();
+            var second = now.getSeconds();
+            var ampm = (hour < 12) ? "AM" : "PM";
+            hour = (hour > 12) ? hour - 12 : hour;
+            hour = (hour == 0) ? 12 : hour;
+            hour = (hour < 10) ? "0" + hour : hour;
+            minute = (minute < 10) ? "0" + minute : minute;
+            second = (second < 10) ? "0" + second : second;
+            var timeString = hour + ":" + minute + ":" + second + " " + ampm;
+            document.getElementById("clock").innerHTML = timeString;
+        }
+        setInterval(updateClock, 1000);
+    </script>
+    <script src="~/lib/js/jquery.min.js"></script>
+    <script src="~/lib/js/bootstrap.min.js"></script>
 
-    </body>
+</body>
 </html>
